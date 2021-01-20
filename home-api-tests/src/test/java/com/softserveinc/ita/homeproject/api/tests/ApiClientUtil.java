@@ -10,11 +10,9 @@ public final class ApiClientUtil {
 
     public static ApiClient getClient() {
         String applicationExternalPort = System.getProperty("home.application.external.port");
-        String applicationAdminUsername = System.getProperty("home.application.admin.username");
-        String applicationAdminPassword = System.getProperty("home.application.admin.password");
         ApiClient client = new ApiClient();
-        client.setUsername(applicationAdminUsername);
-        client.setPassword(applicationAdminPassword);
+        client.setUsername("admin@example.com");
+        client.setPassword("password");
         client.setServers(List.of(new ServerConfiguration("http://localhost:"+applicationExternalPort+"/api/0",
                 "No description provided", new HashMap())));
         return client;
